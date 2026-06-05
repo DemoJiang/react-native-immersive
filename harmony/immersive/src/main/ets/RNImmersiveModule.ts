@@ -179,7 +179,7 @@ export class RNImmersiveModule extends AnyThreadTurboModule implements TM.RNImme
       console.info(`[RNImmersive] deviceInfo sdkApiVersion: ${sdkApiVersionInfo}`);
 
       let isImmersive: boolean = false;
-      if (sdkApiVersionInfo >= 19) {
+      if (sdkApiVersionInfo >= 20) {
         isImmersive = await win.isImmersiveLayout();
       } else {
         console.error(`[RNImmersive] SDK API version ${sdkApiVersionInfo} does not support isImmersiveLayout`);
