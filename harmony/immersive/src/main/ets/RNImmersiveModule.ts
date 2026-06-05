@@ -25,6 +25,7 @@ import { AnyThreadTurboModule } from '@rnoh/react-native-openharmony/ts';
 import { TM } from "./generated/ts"
 import { common } from '@kit.AbilityKit';
 import window from '@ohos.window';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 export class RNImmersiveModule extends AnyThreadTurboModule implements TM.RNImmersive.Spec {
   private uiAbilityContext: common.UIAbilityContext | null = null;
@@ -174,8 +175,17 @@ export class RNImmersiveModule extends AnyThreadTurboModule implements TM.RNImme
         console.warn('[RNImmersive] Window not available');
         return false;
       }
-      const isImmersive = await win.isImmersiveLayout();
-      console.log('[RNImmersive] isImmersiveLayout result:', isImmersive);
+      const sdkApiVersionInfo: number = deviceInfo.sdkApiVersion;
+      console.info(`[RNImmersive] deviceInfo sdkApiVersion: ${sdkApiVersionInfo}`);
+
+      let isImmersive: boolean = false;
+      if (sdkApiVersionInfo >= 19) {
+        isImmersive = await win.isImmersiveLayout();
+      } else {
+        console.error(`[RNImmersive] SDK API version ${sdkApiVersionInfo} does not support isImmersiveLayout`);
+        return;
+      }
+      console.info(`[RNImmersive] isImmersiveLayout result: ${isImmersive}`);
       return isImmersive;
     } catch (error) {
       console.error('[RNImmersive] Error getting immersive state:', error);
