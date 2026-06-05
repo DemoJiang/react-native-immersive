@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-immersive",
+        "License": "MIT License",
+        "License File": "https://github.com/mockingbot/react-native-immersive/blob/master/LICENSE",
+        "Version Number": "2.0.0",
+        "Owner" : "panjinlingwei.com",
+        "Upstream URL": "https://github.com/mockingbot/react-native-immersive",
+        "Description": "Immersive full-screen display"
+    }
+]

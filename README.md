@@ -4,7 +4,7 @@ This project is based on  [react-native-immersive@2.0.0](https://github.com/mock
 
 ## Documentation
 
-- [中文](https://gitcode.com/OpenHarmony-RN/usage-docs/blob/master/zh-cn/react-native-immersive.md)
+- [Chinese](https://gitcode.com/OpenHarmony-RN/usage-docs/blob/master/zh-cn/react-native-immersive.md)
 
 - [English](https://gitcode.com/OpenHarmony-RN/usage-docs/blob/master/en/react-native-immersive.md)
 
